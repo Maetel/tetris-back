@@ -34,6 +34,10 @@ app.get("/api/ping", (req, res) => {
 
 const users: string[] = [];
 
+app.get("/api/user/count", (req, res) => {
+  res.json({ count: users.length });
+});
+
 // Listen for WebSocket connections
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
